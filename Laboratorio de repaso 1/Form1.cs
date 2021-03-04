@@ -94,7 +94,7 @@ namespace Laboratorio_de_repaso_1
                 asistencias.Add(asistenciatemp);
 
             }
-            //Cerrar el archivo, esta linea es importante porque sino despues de correr varias veces el programa daría error de que el archivo quedó abierto muchas veces. Entonces es necesario cerrarlo despues de terminar de leerlo.
+          //Cerrar el archivo, esta linea es importante porque sino despues de correr varias veces el programa daría error de que el archivo quedó abierto muchas veces. Entonces es necesario cerrarlo despues de terminar de leerlo.
             reader1.Close();
         }
         public void Mostrar()
@@ -151,6 +151,11 @@ namespace Laboratorio_de_repaso_1
         private void button2_Click(object sender, EventArgs e)
         {
             Mostrar();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
