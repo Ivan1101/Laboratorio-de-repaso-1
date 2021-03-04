@@ -88,6 +88,7 @@ namespace Laboratorio_de_repaso_1
         private void Form1_Load(object sender, EventArgs e)
         {
             leer_datos();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
