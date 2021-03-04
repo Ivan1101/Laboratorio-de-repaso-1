@@ -18,8 +18,8 @@ namespace Laboratorio_de_repaso_1
         {
             InitializeComponent();
         }
-        void guardar_datos() {
-            FileStream stream = new FileStream("Empleados.txt", FileMode.OpenOrCreate, FileAccess.Write);
+        void guardar_datos(string archivo) {
+            FileStream stream = new FileStream(archivo, FileMode.OpenOrCreate, FileAccess.Write);
 
             StreamWriter writer = new StreamWriter(stream);
 
@@ -74,7 +74,7 @@ namespace Laboratorio_de_repaso_1
                 empleadotemp.SueldoHora = Convert.ToInt32(textsueldohora.Text);
 
                 empleados.Add(empleadotemp);
-                guardar_datos();
+                guardar_datos("Empleados.txt");
                 textCodigo.Text = "";
                 textNombre.Text = "";
                 textsueldohora.Text = "";
