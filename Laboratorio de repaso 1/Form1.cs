@@ -16,5 +16,10 @@ namespace Laboratorio_de_repaso_1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
