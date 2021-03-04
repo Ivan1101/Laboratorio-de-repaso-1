@@ -81,7 +81,7 @@ namespace Laboratorio_de_repaso_1
             }
             catch(Exception )
             {
-                MessageBox.Show("No se han llenado todos los datos");
+    MessageBox.Show("No se han llenado todos los datos", "Mi Mesaje Predeterminado", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
