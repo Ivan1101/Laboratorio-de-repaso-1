@@ -79,9 +79,9 @@ namespace Laboratorio_de_repaso_1
                 textNombre.Text = "";
                 textsueldohora.Text = "";
             }
-            catch(Exception ex)
+            catch(Exception )
             {
-                MessageBox.Show("No se han llenado todos los datos" + ex.ToString());
+                MessageBox.Show("No se han llenado todos los datos");
             }
         }
 
