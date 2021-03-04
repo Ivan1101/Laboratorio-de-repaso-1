@@ -58,17 +58,17 @@ namespace Laboratorio_de_repaso_1
             // dataGridView1_Empleado
             // 
             this.dataGridView1_Empleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1_Empleado.Location = new System.Drawing.Point(90, 12);
+            this.dataGridView1_Empleado.Location = new System.Drawing.Point(32, 12);
             this.dataGridView1_Empleado.Name = "dataGridView1_Empleado";
-            this.dataGridView1_Empleado.Size = new System.Drawing.Size(240, 114);
+            this.dataGridView1_Empleado.Size = new System.Drawing.Size(336, 114);
             this.dataGridView1_Empleado.TabIndex = 2;
             // 
             // dataGridView2_Asistencia
             // 
             this.dataGridView2_Asistencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2_Asistencia.Location = new System.Drawing.Point(90, 154);
+            this.dataGridView2_Asistencia.Location = new System.Drawing.Point(32, 154);
             this.dataGridView2_Asistencia.Name = "dataGridView2_Asistencia";
-            this.dataGridView2_Asistencia.Size = new System.Drawing.Size(240, 119);
+            this.dataGridView2_Asistencia.Size = new System.Drawing.Size(336, 119);
             this.dataGridView2_Asistencia.TabIndex = 3;
             // 
             // comboBox1

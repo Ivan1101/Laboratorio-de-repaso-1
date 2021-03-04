@@ -43,8 +43,7 @@ namespace Laboratorio_de_repaso_1
         {
             FileStream stream = new FileStream("Empleados.txt", FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream);
-
-            while (reader.Peek() > -1)
+     while (reader.Peek() > -1)
             {
                 Empleado personaTemp = new Empleado();
 
@@ -66,14 +65,24 @@ namespace Laboratorio_de_repaso_1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Empleado empleadotemp = new Empleado();
-            empleadotemp.Codigo= Convert.ToInt32(textCodigo.Text);
-            //Int32.Parse(textCodigo.Text);
-            empleadotemp.Nombre = textNombre.Text;
-            empleadotemp.SueldoHora = Convert.ToInt32(textsueldohora.Text);
+            try
+            {
+                Empleado empleadotemp = new Empleado();
+                empleadotemp.Codigo = Convert.ToInt32(textCodigo.Text);
+                //Int32.Parse(textCodigo.Text);
+                empleadotemp.Nombre = textNombre.Text;
+                empleadotemp.SueldoHora = Convert.ToInt32(textsueldohora.Text);
 
-            empleados.Add(empleadotemp);
-            guardar_datos();
+                empleados.Add(empleadotemp);
+                guardar_datos();
+                textCodigo.Text = "";
+                textNombre.Text = "";
+                textsueldohora.Text = "";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se han llenado todos los datos" + ex.ToString());
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
