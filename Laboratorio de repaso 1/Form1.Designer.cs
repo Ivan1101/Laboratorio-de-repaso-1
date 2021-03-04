@@ -34,12 +34,12 @@ namespace Laboratorio_de_repaso_1
             this.dataGridView2_Asistencia = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
+            this.textsueldohora = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Empleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2_Asistencia)).BeginInit();
@@ -89,12 +89,12 @@ namespace Laboratorio_de_repaso_1
             this.label1.TabIndex = 5;
             this.label1.Text = "Sueldo de empleado";
             // 
-            // textBox1
+            // textCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(497, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 20);
-            this.textBox1.TabIndex = 6;
+            this.textCodigo.Location = new System.Drawing.Point(497, 29);
+            this.textCodigo.Name = "textCodigo";
+            this.textCodigo.Size = new System.Drawing.Size(122, 20);
+            this.textCodigo.TabIndex = 6;
             // 
             // label2
             // 
@@ -123,19 +123,19 @@ namespace Laboratorio_de_repaso_1
             this.label4.TabIndex = 9;
             this.label4.Text = "Sueldo por hora";
             // 
-            // textBox2
+            // textNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(497, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 20);
-            this.textBox2.TabIndex = 10;
+            this.textNombre.Location = new System.Drawing.Point(497, 56);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(122, 20);
+            this.textNombre.TabIndex = 10;
             // 
-            // textBox3
+            // textsueldohora
             // 
-            this.textBox3.Location = new System.Drawing.Point(497, 87);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(122, 20);
-            this.textBox3.TabIndex = 11;
+            this.textsueldohora.Location = new System.Drawing.Point(497, 87);
+            this.textsueldohora.Name = "textsueldohora";
+            this.textsueldohora.Size = new System.Drawing.Size(122, 20);
+            this.textsueldohora.TabIndex = 11;
             // 
             // button2
             // 
@@ -145,6 +145,7 @@ namespace Laboratorio_de_repaso_1
             this.button2.TabIndex = 12;
             this.button2.Text = "Mostrar Datos";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -152,12 +153,12 @@ namespace Laboratorio_de_repaso_1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 357);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textsueldohora);
+            this.Controls.Add(this.textNombre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textCodigo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView2_Asistencia);
@@ -165,6 +166,7 @@ namespace Laboratorio_de_repaso_1
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Empleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2_Asistencia)).EndInit();
             this.ResumeLayout(false);
@@ -179,12 +181,12 @@ namespace Laboratorio_de_repaso_1
         private System.Windows.Forms.DataGridView dataGridView2_Asistencia;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textNombre;
+        private System.Windows.Forms.TextBox textsueldohora;
         private System.Windows.Forms.Button button2;
     }
 }
