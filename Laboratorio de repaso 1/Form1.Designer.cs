@@ -41,6 +41,10 @@ namespace Laboratorio_de_repaso_1
             this.textNombre = new System.Windows.Forms.TextBox();
             this.textsueldohora = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxHoras = new System.Windows.Forms.TextBox();
+            this.textBoxMes = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_Empleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2_Asistencia)).BeginInit();
             this.SuspendLayout();
@@ -147,11 +151,47 @@ namespace Laboratorio_de_repaso_1
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(643, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Horas de trabajo";
+            // 
+            // textBoxHoras
+            // 
+            this.textBoxHoras.Location = new System.Drawing.Point(734, 32);
+            this.textBoxHoras.Name = "textBoxHoras";
+            this.textBoxHoras.Size = new System.Drawing.Size(61, 20);
+            this.textBoxHoras.TabIndex = 14;
+            // 
+            // textBoxMes
+            // 
+            this.textBoxMes.Location = new System.Drawing.Point(695, 58);
+            this.textBoxMes.Name = "textBoxMes";
+            this.textBoxMes.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMes.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(653, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Mes";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 357);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBoxMes);
+            this.Controls.Add(this.textBoxHoras);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textsueldohora);
             this.Controls.Add(this.textNombre);
@@ -188,6 +228,10 @@ namespace Laboratorio_de_repaso_1
         private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.TextBox textsueldohora;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxHoras;
+        private System.Windows.Forms.TextBox textBoxMes;
+        private System.Windows.Forms.Label label6;
     }
 }
 

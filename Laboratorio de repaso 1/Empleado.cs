@@ -12,7 +12,7 @@ namespace Laboratorio_de_repaso_1
         int codigo;
         string nombre;
         float sueldoHora;
-       // DataTable
+
 
         public int Codigo { get => codigo; set => codigo = value; }
         public string Nombre { get => nombre; set => nombre = value; }
