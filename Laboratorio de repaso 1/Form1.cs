@@ -15,6 +15,7 @@ namespace Laboratorio_de_repaso_1
     {
         List<Empleado> empleados = new List<Empleado>();
         List<Asistencia> asistencias = new List<Asistencia>();
+        List<Sueldo_total> sueldo_mensual = new List<Sueldo_total>();
         public Form1()
         {
             InitializeComponent();
@@ -40,63 +41,51 @@ namespace Laboratorio_de_repaso_1
 
             writer.Close();
         }
+        public void guardar_datos2(string archivo)
+        {
+            FileStream stream2 = new FileStream(archivo, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer2 = new StreamWriter(stream2);
+
+            for (int x = 0; x < sueldo_mensual.Count; x++)
+            {
+                writer2.WriteLine(sueldo_mensual[x].Codigo);
+                writer2.WriteLine(sueldo_mensual[x].Nombre);
+                writer2.WriteLine(sueldo_mensual[x].Sueldo_mensual);
+            }
+            writer2.Close();
+        }
         private void leer_datos()
         {
             FileStream stream = new FileStream("Empleados.txt", FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream);
             while (reader.Peek() > -1)
             {
-                Empleado personaTemp = new Empleado();
+                Empleado persona2Temp = new Empleado();
 
-                personaTemp.Codigo = Convert.ToInt32(reader.ReadLine());
-                personaTemp.Nombre = reader.ReadLine();
-                personaTemp.SueldoHora = float.Parse(reader.ReadLine());
-
-                empleados.Add(personaTemp);
+                persona2Temp.Codigo = Convert.ToInt32(reader.ReadLine());
+                persona2Temp.Nombre = reader.ReadLine();
+                persona2Temp.SueldoHora = float.Parse(reader.ReadLine());
+                empleados.Add(persona2Temp);
 
             }
             //Cerrar el archivo, esta linea es importante porque sino despues de correr varias veces el programa daría error de que el archivo quedó abierto muchas veces. Entonces es necesario cerrarlo despues de terminar de leerlo.
             reader.Close();
         }
-        public void guardar_datos1(string archivo)
-        {
-            FileStream stream2 = new FileStream(archivo, FileMode.OpenOrCreate, FileAccess.Write);
-
-            StreamWriter writer2 = new StreamWriter(stream2);
-
-            //foreach (var p in empleados)
-            //{
-            //    writer.WriteLine(p.Codigo);
-            //    writer.WriteLine(p.Nombre);
-            //    writer.WriteLine(p.SueldoHora);
-            //}
-
-            for (int x = 0; x < empleados.Count; x++)
-            {
-                writer2.WriteLine(empleados[x].Codigo);
-                writer2.WriteLine(empleados[x].Nombre);
-                writer2.WriteLine(empleados[x].Sueldo_mesual);
-            }
-
-            writer2.Close();
-        }
+        
         private void leer_datos1()
         {
-            FileStream stream3 = new FileStream("Empleadostotal.txt", FileMode.Open, FileAccess.Read);
-            StreamReader reader3 = new StreamReader(stream3);
-            while (reader3.Peek() > -1)
+            FileStream stream2 = new FileStream("Empleadostotal.txt", FileMode.Open, FileAccess.Read);
+            StreamReader reader2 = new StreamReader(stream2);
+            while (reader2.Peek() > -1)
             {
-                Empleado empleadotemp = new Empleado();
-
-                empleadotemp.Codigo = Convert.ToInt32(reader3.ReadLine());
-                empleadotemp.Nombre = reader3.ReadLine();
-                empleadotemp.Sueldo_mesual = float.Parse(reader3.ReadLine());
-
-                empleados.Add(empleadotemp);
-
+                Sueldo_total personaTemp = new Sueldo_total();
+                personaTemp.Codigo = Convert.ToInt32(reader2.ReadLine());
+                personaTemp.Nombre = reader2.ReadLine();
+                personaTemp.Sueldo_mensual = Convert.ToInt32(reader2.ReadLine());
+                sueldo_mensual.Add(personaTemp);
             }
             //Cerrar el archivo, esta linea es importante porque sino despues de correr varias veces el programa daría error de que el archivo quedó abierto muchas veces. Entonces es necesario cerrarlo despues de terminar de leerlo.
-            reader3.Close();
+            reader2.Close();
         }
 
         public void guardar2(string archivo1)
@@ -143,14 +132,18 @@ namespace Laboratorio_de_repaso_1
             dataGridView1_Empleado.DataSource = null;
             dataGridView1_Empleado.DataSource = empleados;
             dataGridView1_Empleado.Refresh();
-
-        }
-        public void Mostrar2(){
             dataGridView2_Asistencia.DataSource = null;
             dataGridView2_Asistencia.DataSource = asistencias;
             dataGridView2_Asistencia.Refresh();
         }
         
+        public void Mostrar2()
+        {
+            dataGridView1_Empleado.DataSource = null;
+            dataGridView1_Empleado.DataSource = sueldo_mensual;
+            dataGridView1_Empleado.Refresh();
+        }
+
         void limpiar_campos()
         {
             textCodigo.Text = "";
@@ -164,21 +157,24 @@ namespace Laboratorio_de_repaso_1
             try
             {
                 Empleado empleadotemp = new Empleado();
+                Sueldo_total empleado_mensual = new Sueldo_total();
                 Asistencia asistenciatemp = new Asistencia();
                 empleadotemp.Codigo = Convert.ToInt32(textCodigo.Text);
                 //Int32.Parse(textCodigo.Text);
                 empleadotemp.Nombre = textNombre.Text;
-                empleadotemp.SueldoHora =float.Parse(textsueldohora.Text);
+                empleadotemp.SueldoHora = Convert.ToInt32(textsueldohora.Text);
                 asistenciatemp.Codigo = Convert.ToInt32(textCodigo.Text);
                 asistenciatemp.Horas = Convert.ToInt32(textBoxHoras.Text);
+                empleado_mensual.Sueldo_mensual = empleadotemp.SueldoHora * asistenciatemp.Horas;
+                empleado_mensual.Codigo = empleadotemp.Codigo;
+                empleado_mensual.Nombre = empleadotemp.Nombre;
                 asistenciatemp.Mes = textBoxMes.Text;
-                empleadotemp.Sueldo_mesual = (empleadotemp.SueldoHora * asistenciatemp.Horas);
-
                 empleados.Add(empleadotemp);
                 asistencias.Add(asistenciatemp);
-                 guardar_datos("Empleados.txt");
+                sueldo_mensual.Add(empleado_mensual);
+                guardar_datos("Empleados.txt");
                 guardar2("Asistencias.txt");
-                guardar_datos1("Empleadostotal.txt");
+                guardar_datos2("Empleadostotal.txt");
                 limpiar_campos();
             }
             catch(Exception )
@@ -198,11 +194,15 @@ namespace Laboratorio_de_repaso_1
         private void button2_Click(object sender, EventArgs e)
         {
             Mostrar();
-            Mostrar2();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            dataGridView2_Asistencia.DataSource = null;
+            dataGridView2_Asistencia.DataSource = asistencias;
+            dataGridView2_Asistencia.Refresh();
+            Mostrar2();
         }
     }
 }
